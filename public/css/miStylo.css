@@ -1,0 +1,23 @@
+@charset "utf-8";
+/* CSS Document */
+
+form{
+	margin:auto;
+	border:1px solid #06F;
+	box-sizing:border-box;
+	padding:10px;
+	border-radius:15px;
+	height:auto;
+}
+#titulo {
+	background:#09F;
+	width:auto;
+	border:1px solid #006;
+	margin:2px auto 15px auto;
+	border-radius:10px;
+	box-shadow:#006 3px 3px 5px;
+	box-sizing:border-box;
+	height:auto;
+	text-shadow:#333 3px 3px 5px;
+	font-size:medium;
+}

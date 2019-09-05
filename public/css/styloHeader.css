@@ -1,0 +1,12 @@
+#cabecera{
+	background:#09F;
+	border:1px solid #006;
+	margin:10px 2px;
+	border-radius:10px;
+	box-shadow:#006 5px 5px 5px;
+
+}
+
+#opciones li{
+	padding:0px 10px 0px 10px;
+}

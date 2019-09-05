@@ -1,0 +1,516 @@
+body{
+	background: #e9ebee;
+	font-family: Tahoma, Verdana, Segoe, sans-serif;
+	font-size: 16px;
+}
+
+a{color: #1176b6;}
+a:hover{text-decoration: underline;}
+
+/****** HEADER ******/
+
+header {
+	background: #11B630;
+	padding: 10px 0;
+}
+
+/****** LOGO ******/
+
+header .logo img { height: 30px; margin: 0; padding: 0; }
+
+/****** BUSCAR ******/
+
+header .buscar form input[type='text'] {
+	width: 100%;
+	background: #fff;
+	border: none;
+	font-size: 12px;
+	padding: 0 10px;
+	height: 25px;
+	line-height: 25px;
+	border-radius: 3px 0 0 3px;
+	color: #6d6d6d;
+	font-family: Tahoma, Verdana, Segoe, sans-serif;
+}
+
+header .buscar form button{
+	width: 100%;
+	background: #fff;
+	border: none;
+	font-size: 12px;
+	padding: 0 10px;
+	height: 25px;
+	line-height: 25px;
+	border-radius: 0 3px 3px 0;
+	cursor: pointer;
+	color: #6d6d6d;
+}
+
+header .buscar form button:hover{
+	background: #53D027;
+	color: #fff;
+}
+
+/****** MENU ******/
+
+header .menu { padding: 0; }
+
+header .menu a {
+	color: rgba(255,255,255,.8);
+	text-decoration: none;
+}
+
+header .menu a:hover { 	color: #fff; }
+
+header .menu .imagen {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+}
+
+header .menu .imagen img { 
+	width: 30px;
+	height: 30px;
+	border-radius: 100px; 
+}
+
+/****** BARRA IZQUIERDA *******/
+
+main{ padding-top: 20px; }
+
+main .barra-lateral-izquierda{
+	padding-bottom: 10px;
+	padding-left: 0;
+}
+
+main .barra-lateral-izquierda nav {
+	border-bottom: 1px solid #c7c8ca;
+	padding-bottom: 20px;
+}
+
+main .barra-lateral-izquierda nav a{
+	display: block;
+	padding: 3px;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #3d3c3c;
+}
+
+main .barra-lateral-izquierda nav a:hover {
+	background: #f2f2f2;
+	text-decoration: none;
+}
+
+main .barra-lateral-izquierda nav a i{ margin-right: 10px; }
+
+/****** CONTENIDO PRINCIPAL ******/
+/****** PUBLICAR ******/
+
+main .contenido-principal .publicar {
+	margin-bottom: 20px;
+}
+
+main .contenido-principal .publicar .foto{
+	padding-left: 15px;
+}
+
+main .contenido-principal .publicar .foto a{
+	width: 40px;
+	height: 40px;
+	display: inline-block;
+	overflow: hidden;
+	border-radius: 100px;
+	margin-top: 10px;
+}
+
+main .contenido-principal .publicar .foto img {
+	width: 40px;
+	height: 40px;
+	width: 100%;
+}
+
+main .contenido-principal .publicar form .titulo {
+	width: 50%;
+	border: none;
+	margin-bottom: 2px;
+	padding: 0px 5px;
+	font-size: 16px;
+	font-family: Tahoma, Verdana, Segoe, sans-serif;
+	color: #565656;
+	box-shadow: 0 2px 2px 0 rgba(0,0,0,.35);
+}
+
+main .contenido-principal .publicar form .input {
+	width: 31%;
+	border: none;
+	margin-bottom: 2px;
+	padding: 0px 5px;
+	font-size: 16px;
+	font-family: Tahoma, Verdana, Segoe, sans-serif;
+	color: #565656;
+	box-shadow: 0 2px 2px 0 rgba(0,0,0,.35);
+}
+
+main .contenido-principal .publicar form textarea {
+	width: 100%;
+	max-width: 100%;
+	min-height: 100px;
+	max-height: 200px;
+	border: none;
+	padding: 15px;
+	font-size: 16px;
+	font-family: Tahoma, Verdana, Segoe, sans-serif;
+	color: #565656;
+	box-shadow: 0 2px 2px 0 rgba(0,0,0,.35);
+}
+
+main .contenido-principal .publicar form .contenedor-botones {
+	padding: 20px 0;
+	border-bottom: 1px solid #c7c8ca;
+}
+
+main .contenido-principal .publicar form button {
+	border: 1px solid #0CD51F;
+	padding: 5px 30px;
+	font-size: 14px;
+	font-family: Arial, Helvetica, sans-serif;
+	background: linear-gradient(to bottom,#0C7D0C 0%,#4CF136 100%);
+	color: #fff;
+	border-radius: 3px;
+	cursor: pointer;
+}
+
+main .contenido-principal .publicar form button:hover {
+	background: linear-gradient(to bottom,#4CF136 0%,#0C7D0C 100%);
+}
+
+#imagen{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	opacity: 0;
+}
+
+main .contenido-principal .publicar form .contenedor-botones .btn-imagen{
+	color: #8d8d8d;
+	font-size: 20px;
+	margin-right: 10px;
+	position: relative;
+}
+
+main .contenido-principal .publicar form .contenedor-botones .btn-imagen:hover{
+	color: #3d3c3c;
+}
+
+main .contenido-principal .publicar form .contenedor-botones .btn-imagen i{
+	text-align: center;
+	padding: 2px;
+}
+
+#info, #info2{
+	width: auto;
+	font-size: 10px;
+	font-weight: bold;
+	color: rgba(235, 18, 18, .3);
+	display:flex;
+	align-content: center;
+}
+
+#arc{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	opacity: 0;
+}
+
+main .contenido-principal .publicar form .contenedor-botones .btn-arc{
+	color: #8d8d8d;
+	font-size: 20px;
+	margin-right: 10px;
+	position: relative;
+}
+
+main .contenido-principal .publicar form .contenedor-botones .btn-arc:hover{
+	color: #3d3c3c;
+}
+
+main .contenido-principal .publicar form .contenedor-botones .btn-arc i{
+	text-align: center;
+	padding: 2px;
+}
+
+/****** Barra Derecha ******/
+
+main .barra-lateral-derecha h3 {
+	font-size: 16px;
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: center;
+}
+
+main .barra-lateral-derecha .ads {
+	margin-bottom: 20px;
+}
+
+main .barra-lateral-derecha .ads a {
+	margin-bottom: 15px;
+	display: inline-block;
+}
+
+main .barra-lateral-derecha a img {
+	width: 100%;
+}
+
+/****** FOOTER ******/
+
+main footer {
+	font-size: 14px;
+}
+
+main footer a{
+	color: #1176b6;
+	line-height: 14px;
+	margin: 0 5px;
+	padding: 2px;
+}
+
+main footer a:hover {
+	color: #095281;
+	text-decoration: none;
+	background: rgba(255,255,255,.5);
+}
+
+main footer .copyrigth {
+	text-align: center;
+	color: #BFBFBF;
+}
+
+/****** Publicaciones de Amigos ******/
+main .publicacion_amigos .post {
+	border-bottom: 1px solid dimgrey;
+	background-color: rgba(238,240,243,.9);
+}
+
+main .publicacion_amigos{
+	margin-bottom: 3px;
+}
+
+main .publicacion_amigos .foto img {
+	width: 40px;
+	height: 40px;
+	margin-top: 0px;
+	border-radius: 100px;
+}
+
+main .publicacion_amigos .post a{
+	text-decoration: none;
+	color: #818080;
+}
+main .publicacion_amigos .post a:hover{color: #000;}
+
+.post .ico-post  a {
+	color: rgba(0,0,0,.5);
+	text-decoration: none;
+	margin: 0px 10px;
+}
+
+.post .ico-post  a:hover {
+	color: rgba(0,125,0,.8);
+}
+
+/****** Comentarios de Amigos ******/
+.comentario .foto{
+	width: 40px;
+	height: 40px;
+	margin-top: 10px;
+	border-radius: 100px;
+}
+.fechapost{
+	font-size: .5em;
+	text-align: right;
+	font-weight: bold;
+	color: #140202;
+}
+
+/*--------------VENTANA DE COMENTARIO---------------------*/
+	.contenedor_comentario{
+		background-color:rgba(0,0,0,.2);
+		position: fixed;
+		top: 0vh;
+		width: 100%;
+		height: 100%;
+		text-align: center;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		visibility: hidden;
+	}
+	.ventana_comentario{
+		background-color: #FFFFFF;
+		color: red;
+		width: 25%;
+		height: 25%;
+		border: 1px solid #FFFFFF;
+		border-radius: 5px;
+		box-shadow:10px 10px 10px #060606;
+		padding: 10px;
+	}
+	.ventana_comentario textarea{
+		border: 1px solid #E8E7E7;
+		border-radius: 10px;
+		width: 99%;
+		height: 100px;
+		max-height: 100px;
+		min-height: 100px;
+		margin-bottom: 5px;
+	}
+/*--------------VENTANA DE DENUNCIA---------------------*/
+	.contenedor{
+		background-color:rgba(0,0,0,.2);
+		position: fixed;
+		top: 0vh;
+		width: 100%;
+		height: 100%;
+		text-align: center;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		visibility: hidden;
+	}
+	.denuncia{
+		background-color: #FFFFFF;
+		color: red;
+		width: 25%;
+		height: 25%;
+		border: 1px solid #FFFFFF;
+		border-radius: 5px;
+		box-shadow:10px 10px 10px #060606;
+		padding: 10px;
+	}
+
+/****** MEDIAQUERIES ******/
+
+@media screen and (max-width: 767px) {
+
+	main .btn-menu {
+		display: block;
+		border: 1px solid #009C21;
+		padding: 5px 10px;
+		font-size: 14px;
+		background: linear-gradient(to bottom, #7FCD1A 0%, #53B611 100%);
+		color: #fff;
+		border-radius: 3px;
+		cursor: pointer;
+		margin-bottom: 20px;
+		text-align: center;
+	}
+
+	main .btn-menu:hover {
+		background: #0D9D65;
+		text-decoration: none;
+	}
+
+	main .fondo-enlace {
+		position: fixed;
+		width: 100%;
+		height: 100vh;
+		left: 0;
+		top: 0;
+		cursor: pointer;
+		
+		display: none;
+	}
+
+	main .fondo-enlace.active {
+		display: block;
+		background: rgba(0, 0, 0, .5);
+		z-index: 99;
+	}
+
+	main .barra-lateral-izquierda{
+		width: 70%;
+		position: fixed;
+		top: 0;
+		left: 0;
+		transform: translateX(-100%);
+	}
+
+	main .barra-lateral-izquierda.active {
+		transition: all .3s ease;
+		transform: translateX(0%);
+		background: rgba(0, 0, 0, .85);
+		z-index: 100;
+		padding: 0;
+		margin: 0;
+		height: 100vh;
+		overflow: scroll;
+	}
+
+	main .barra-lateral-izquierda nav {
+		border-bottom: none;
+	}
+
+	main .barra-lateral-izquierda nav a {
+		padding: 10px;
+		color: #fff;
+	}
+
+	main .barra-lateral-izquierda nav a:hover {
+		color: #3d3c3c;
+	}
+}
+
+@media screen and (max-width: 575px){
+	header .menu {
+		padding: 0 25px 15px 25px;
+		color: : #000;
+	}
+	main .contenido-principal .publicar form button {
+		width: 80px;
+		text-align: center;
+		padding: 5px 10px;
+	}
+	.comentario .foto{
+		width: 20px;
+		height: 20px;
+		margin-top: 7px;
+	}
+	main .publicacion_amigos .foto img {
+		width: 30px;
+		height: 30px;
+		margin-top: 7px;
+	}
+	.comentario a, p {
+		font-size: 12px;
+	}
+	main .contenido-principal .publicar form .titulo {
+		margin-top: 5px;
+		width: 100%;
+	}
+	main .contenido-principal .publicar form .input {
+		width: 32%;
+		font-size: .7em;
+	}
+
+	/*--------------VENTANA DE COMENTARIO---------------------*/
+	.ventana_comentario{
+		width: 100%;
+	}
+/*--------------VENTANA DE DENUNCIA---------------------*/
+	.denuncia{
+		width: 100%;
+	}
+
+}
+
+@media screen and (max-width: 320px){
+	main .barra-lateral-izquierda nav a {
+		font-size: 12px;
+	}
+}
