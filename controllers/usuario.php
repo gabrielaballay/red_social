@@ -1,5 +1,12 @@
 <?php
-session_start();
+if(!isset($_SESSION)) 
+{ 
+    session_start(); 
+}
+if($_SESSION['usuario_registrado']==null)
+{
+    header("Location:".constant('URL')."login");
+}
 class Usuario extends Controller{
 	
 	function __construct(){
@@ -15,9 +22,8 @@ class Usuario extends Controller{
 
 	function buscarUser($param=null){
 		$id=$param[0];
-		$this->view->user=$this->model->devuelveUser($id);
+		$_SESSION['user_1']=$this->model->devuelveUser($id);
 		$this->render();
 	}
-
 }
 ?>

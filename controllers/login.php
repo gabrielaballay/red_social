@@ -6,7 +6,7 @@ class Login extends Controller{
   
   function __construct(){
     parent::__construct();
-    $this->view->mensaje="Hubo un error en la solicitud o no existe la pàgina";
+    $this->view->mensaje="";
   }
   
   function render(){
@@ -21,14 +21,17 @@ class Login extends Controller{
         $pas=$_POST['pass'];
        
         $log=$this->model->buscarUser($login);
-        
-        if(password_verify($pas,$log->password)){
-          $_SESSION['usuario_registrado']=$log;
-          header('location:../main');
-          
+        if($log!=null){
+          if(password_verify($pas,$log->password)){
+            $_SESSION['usuario_registrado']=$log;
+            $_SESSION['errores']="";
+            header('location:../main');       
+          }else{
+            $_SESSION['errores']="Ingrese usuario y contraseña";
+            $this->render();
+          }
         }else{
-          $_SESSION['errores']="Ingrese usuario y contraseña";
-          $this->view->mensaje="Usuario o Contraseña incorrectos";
+          $_SESSION['errores']="usuario y/o contraseña incorrectos";
           $this->render();
         }
       }

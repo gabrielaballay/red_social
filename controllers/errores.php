@@ -5,9 +5,6 @@ class Errores extends Controller{
 		parent::__construct();
 		$this->view->mensaje="Hubo un error en la solicitud o no existe la pàgina";
 		$this->view->render('viewerror');
-			
 	}
-	
 }
-
 ?>

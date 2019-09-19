@@ -38,9 +38,17 @@ class Principal{
 				$controller->render();
 			}
 		}else{
+			if(!isset($_SESSION)) 
+			{ 
+			    session_start(); 
+			}
+			if($_SESSION['usuario_registrado']==null)
+			{
+			    header("Location:".constant('URL')."login");
+			}
 			$controller=new Errores();
+
 		}
-	}
-	
+	}	
 }
 ?>

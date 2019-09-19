@@ -1,5 +1,12 @@
 <?php
-session_start();
+if(!isset($_SESSION)) 
+{ 
+    session_start(); 
+}
+if($_SESSION['usuario_registrado']==null)
+{
+    header("Location:".constant('URL')."login");
+}
 class Galeria extends Controller{
 	
 	function __construct(){

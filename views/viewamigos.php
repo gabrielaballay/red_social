@@ -24,13 +24,14 @@
 		?>
 					<div class="publicacion_amigos row">
 						<div class="foto col-auto">
-							<a href="#">
+							<a href="<?php echo constant('URL').'usuario/buscarUser/'.$ami->id_usuario;?>">
 								<img src="<?php echo constant('URL').'public/imageusuarios/'.$ami->imagen_perfil;?>">
 							</a>
 						</div>
 						<div class="col">
 							<div class="post">
-								<a href="#" class="nombre"><?php echo $ami->nombre.' '.$ami->apellido;?></a>	
+								<a href="<?php echo constant('URL').'usuario/buscarUser/'.$ami->id_usuario;?>" class="nombre">
+								<?php echo $ami->nombre.' '.$ami->apellido;?></a>	
 							</div>
 						</div>
 						<div class="col">

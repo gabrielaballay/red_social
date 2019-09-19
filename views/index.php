@@ -31,7 +31,7 @@ $user=$usuario->id_usuario;
 					</div>
 					<!-- Publicar Post -->
 					<div class="col">
-						<form action="<?php echo constant('URL') ?>/posteo/postear" method="post" enctype="multipart/form-data">
+						<form action="<?php echo constant('URL') ?>posteo/postear/1" method="post" enctype="multipart/form-data">
 							<input type="text" name="titulo" placeholder="Titulo" class="titulo">
 							<textarea name="mensaje" id="" placeholder="Publicar Mensaje"></textarea>
 							<input type="text" name="palabra1" class="input" placeholder="Palabra clave 1">
@@ -41,7 +41,7 @@ $user=$usuario->id_usuario;
 								<div class="media">
 									<div class="btn-imagen">
 										<i class="icon-picture"></i>
-										<input type="file" name="imagenes" id="imagen" accept="image/*" multiple onchange="controla()">
+										<input type="file" name="imagenes[]" id="imagen" accept="image/*" multiple onchange="controla()">
 									</div>
 									<div class="btn-arc">
 										<i class="icon-upload"></i>
@@ -103,6 +103,27 @@ $user=$usuario->id_usuario;
 					<span class='fechapost'><?php echo $post->fecha;?></span>
 					<p>
 					<p><?php echo $post->texto_post;?></p>
+					<div class="imagenes-usuarios">
+					<?php if($post->imagen1!=null){ ?>
+						<div class="imagen1">
+						<a href="" data-toggle="modal" data-target="#modal">
+							<img src="<?php echo constant('URL').'public/imageusuarios/'.$post->imagen1;?>"  class="img-fluid imagen">
+						</a>
+						</div>
+					<?php } if ($post->imagen2!=null){ ?>
+						<div class="imagen2">
+						<a href="" data-toggle="modal" data-target="#modal">
+							<img src="<?php echo constant('URL').'public/imageusuarios/'.$post->imagen2;?>" class="img-fluid imagen">
+						</a>
+						</div>
+					<?php } if($post->imagen3!=null){ ?>
+						<div class="imagen3">
+						<a href="" data-toggle="modal" data-target="#modal">
+							<img src="<?php echo constant('URL').'public/imageusuarios/'.$post->imagen3;?>"  class="img-fluid imagen">
+						</a>
+						</div>
+					<?php }?>
+					</div>
 					<hr>
 					<div class="col">
 						<div class="contenedor-botones d-flex justify-content-between">
@@ -119,6 +140,7 @@ $user=$usuario->id_usuario;
 										
 						if($coRegis->id_post==$post->id_post && $coRegis->estado){
 					?>
+					<small class="d-flex justify-content-center" style="color:#40B72C">Comentrio</small>
 						<div class="comentario media">
 							<?php
 							if($this->id_p==$coRegis->id_post && $this->mensaje!=""){
@@ -136,7 +158,7 @@ $user=$usuario->id_usuario;
 								<hr>
 								<?php
 								if($user==$coRegis->id_usuario){
-								echo "<a href='".constant('URL')."main/eliminarComentario?id_comen=".$coRegis->id_comentario."'><i class='icon-trash' style='color:red' title='Eliminar Comentario'></i></a>";
+								echo "<a href='".constant('URL')."main/eliminarComentario/1?id_comen=".$coRegis->id_comentario."'><i class='icon-trash' style='color:red' title='Eliminar Comentario'></i></a><hr>";
 								}	?>
 							</div>
 						</div>
@@ -159,7 +181,7 @@ $user=$usuario->id_usuario;
 <div class="contenedor">
     <div class="denuncia">
     	<span style="color:#363FF3;">Denuncia</span>
-    	<form name="f1" action="<?php echo constant('URL')?>main/denuncia" method="post">
+    	<form name="f1" action="<?php echo constant('URL')?>main/denuncia/1" method="post">
     	<label>Palabras Ofensivas
 		<input type='radio' name='denunciar' value='Palabras Ofensivas' checked="true"></label><br>
 		<label>Imagenes Obsenas
@@ -177,7 +199,7 @@ $user=$usuario->id_usuario;
 <!-- Ventana de Comentario-->
 <div class="contenedor_comentario">
     <div class="ventana_comentario">
-    	<form name="f2" action="<?php echo constant('URL')?>main/comentar" method="post">
+    	<form name="f2" action="<?php echo constant('URL')?>main/comentar/1" method="post">
 	    	<textarea name="comen_post" placeholder="Comentario"></textarea><br>	
 	    	<input type="hidden" name="idpost">
 			<input type='submit' name='comentar' value='Comentar' class='btn btn-sm btn-success'>
@@ -187,49 +209,19 @@ $user=$usuario->id_usuario;
 		</form>
 	</div>
 </div>
+<!-- Visor de Imagenes -->
+<div class="modal fade" id="modal">
+	<div class="modal-dialog d-flex justify-content-center align-items-center">
+		<div class="modal-content">
+			<img src="" id="imagen-modal" alt="">
+		</div>
+	</div>
+</div>
 
 <script src="<?php echo constant('URL')?>public/js/jquery-3.4.1.min.js"></script>
 <script src="<?php echo constant('URL')?>public/js/menu.js"></script>
 <script src="<?php echo constant('URL')?>public/js/bootstrap.min.js"></script>
 <script src="<?php echo constant('URL')?>public/js/controlaimagen.js"></script>
-
-<script>
-
-var post;
-var html=document.getElementsByTagName("html")[0];
-var body=document.getElementsByTagName("body")[0];
-
-//muestra la denuncias ademas recuperar el id de post denunciado
-function mostrar(id_post){
-	document.f1.invisible.value=id_post;
-	body.style.overflow="hidden";//deshabilita la barra scroll
-	$(".contenedor").css("visibility","visible");
-	$(".denuncia").css("visibility","visible");
-}
-	
-//esconde la denuncia	
-$("#cancelDenun").click(function(){
-	body.style.overflow="visible";//hace visible la sacrollbar
-	$(".contenedor").css("visibility","hidden");
-	$(".denuncia").css("visibility","hidden");
-})
-
-//muestra la ventana de comentario
-function mostrarVentana(id){
-	document.f2.id_p.value=id;
-	body.style.overflow="hidden";//deshabilita la barra scroll
-	$(".contenedor_comentario").css("visibility","visible");
-	$(".ventana_comentario").css("visibility","visible");
-	
-}
-	
-//esconde la ventana de comentario	
-$("#cancelcom").click(function(){
-	body.style.overflow="visible";//hace visible la sacrollbar
-	$(".contenedor_comentario").css("visibility","hidden");
-	$(".ventana_comentario").css("visibility","hidden");
-})
-</script>
 
 </body>
 </html>

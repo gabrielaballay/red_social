@@ -10,7 +10,7 @@
 	<link rel="stylesheet" href="<?php echo constant('URL')?>public/css/estilos.css">
 </head>
 <body>
-<header>
+<header class="si-top">
 	<?php $usuario=$_SESSION['usuario_registrado']; ?>
 	<div class="container">
 		<div class="row justify-content-start">

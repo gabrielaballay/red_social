@@ -2,6 +2,7 @@ body{
 	background: #e9ebee;
 	font-family: Tahoma, Verdana, Segoe, sans-serif;
 	font-size: 16px;
+	margin-top: 50px;
 }
 
 a{color: #1176b6;}
@@ -14,6 +15,14 @@ header {
 	padding: 10px 0;
 }
 
+.si-top{
+	position: fixed;
+	margin-top: 0;
+	top: 0;
+  	right: 0;
+  	left: 0;
+  	z-index: 1030;
+}
 /****** LOGO ******/
 
 header .logo img { height: 30px; margin: 0; padding: 0; }
@@ -267,6 +276,24 @@ main .barra-lateral-derecha a img {
 	width: 100%;
 }
 
+/****** Barra Derecha ******/
+
+main .datos-usuario h3 {
+	font-size: 16px;
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: center;
+}
+
+main .datos-usuario .ads {
+	margin-bottom: 20px;
+}
+
+main .datos-usuario img {
+	width: 50%;
+	height: 25%;
+	margin-bottom: 20px;
+}
+
 /****** FOOTER ******/
 
 main footer {
@@ -322,6 +349,23 @@ main .publicacion_amigos .post a:hover{color: #000;}
 
 .post .ico-post  a:hover {
 	color: rgba(0,125,0,.8);
+}
+
+.post .imagenes-usuarios img{
+	width: 40px;
+	height: 40px;
+	border: 1px solid;
+}
+
+.post .imagenes-usuarios .imagen1, .imagen2, .imagen3{
+	display: inline-block;
+}
+
+.modal-dialog {
+	text-align: center;	
+	width: 95%;
+	height: 90%;
+	max-height: 90%
 }
 
 /****** Comentarios de Amigos ******/
@@ -394,10 +438,27 @@ main .publicacion_amigos .post a:hover{color: #000;}
 		padding: 10px;
 	}
 
+/*******GALERIA DE FOTOS************/
+
+.galeria-imagen .modal-dialog {
+	width: 100%;
+	height: 200%;
+}
+
+.galeria-imagen .modal-dialog img{
+	width: 150%;
+	height: 200%;
+}
+.galeria-imagen .titulo{
+	text-align: center;
+	color: #22B425;
+}
+
+
 /****** MEDIAQUERIES ******/
 
 @media screen and (max-width: 767px) {
-
+	
 	main .btn-menu {
 		display: block;
 		border: 1px solid #009C21;
@@ -430,7 +491,7 @@ main .publicacion_amigos .post a:hover{color: #000;}
 	main .fondo-enlace.active {
 		display: block;
 		background: rgba(0, 0, 0, .5);
-		z-index: 99;
+		z-index: 1099;
 	}
 
 	main .barra-lateral-izquierda{
@@ -445,7 +506,7 @@ main .publicacion_amigos .post a:hover{color: #000;}
 		transition: all .3s ease;
 		transform: translateX(0%);
 		background: rgba(0, 0, 0, .85);
-		z-index: 100;
+		z-index: 1100;
 		padding: 0;
 		margin: 0;
 		height: 100vh;
@@ -467,6 +528,10 @@ main .publicacion_amigos .post a:hover{color: #000;}
 }
 
 @media screen and (max-width: 575px){
+	body{
+		margin-top: 100px;
+	}
+
 	header .menu {
 		padding: 0 25px 15px 25px;
 		color: : #000;
